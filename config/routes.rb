@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'apartments' => 'apartments#index'
   get 'apartments/new' => 'apartments#new'
-  get 'apartments/:id' => 'apartments#show'
+  get 'apartments/:id' => 'apartments#show', as: :apartment
   post 'apartments' => 'apartments#create'
 
 
