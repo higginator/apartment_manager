@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   post 'apartments' => 'apartments#create'
 
 
-
-  get 'signup' => 'users#new'
+  get 'signup' => 'users#signup_landing'
+  get 'signup/tenant' => 'users#new'
+  get 'signup/landlord' => 'users#new'
   resources :users
 
   get 'login' => 'sessions#new'
