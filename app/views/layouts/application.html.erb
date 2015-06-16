@@ -12,14 +12,13 @@
   <ul> 
     <li><%= current_user.email %></li> 
     <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
-  </ul> 
 <% else %> 
   <ul> 
     <li><%= link_to "Login", login_path %></a></li> 
-    <li><%= link_to "Signup", signup_path %></a></li> 
-  </ul> 
+    <li><%= link_to "Signup", signup_path %></a></li>
 <% end %>
-
+  <li> <%= link_to "Apartments", apartments_path %></a></li> 
+  </ul> 
 <%= yield %>
 
 </body>

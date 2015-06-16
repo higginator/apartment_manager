@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'main#home'
+
   get 'apartments' => 'apartments#index'
   get 'apartments/new' => 'apartments#new'
   get 'apartments/:id' => 'apartments#show', as: :apartment

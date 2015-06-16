@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 	def signup_landing
-
 	end
 
 	def new_landlord
