@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
 
   get 'signup' => 'users#signup_landing'
-  get 'signup/tenant' => 'users#new'
-  get 'signup/landlord' => 'users#new'
+  get 'signup/tenant' => 'users#new_tenant'
+  get 'signup/landlord' => 'users#new_landlord'
   resources :users
 
   get 'login' => 'sessions#new'

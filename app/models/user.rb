@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 
 	def landlord?
-		self.role =='landlord'
+		self.role == 'landlord'
 	end
 
 	def tenant?
