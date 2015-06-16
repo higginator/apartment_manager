@@ -1,16 +1,16 @@
-<div class="login">
-  <div class="container">
-    <div class="form">
+<%= form_for(@user, :html => {:class => 'form-horizontal'}) do |f| %>
 
-    <div class='container'>
-     <div class='row'>
-       <div class='text-center col-lg-12'>
-         <h1>Let's Get Started, #{poop}</h1>
-        </div>
-      </div>
+  <% if @user.landlord? %>
+    <div class='role' id='landlord' hidden>
+      <%= f.hidden_field :role, :value => 'landlord' %>
     </div>
-    
-    <%= form_for(@user, :html => {:class => 'form-horizontal'}) do |f| %>
+  <% else %>
+    <div class='role' id='tenant' hidden>
+      <%= f.hidden_field :role, :value => 'tenant' %>
+    </div>
+  <% end %>
+
+
       <div class='form-group form-group-lg'>
         <label for='inputFirstName' class='col-lg-2 control-label'>First Name</label>
         <div class='col-lg-10'>
@@ -42,9 +42,4 @@
           </div>
         </div>
       </div>
-    <% end %>
-
-  
-    </div>
-  </div>
-</div>
+<% end %>
