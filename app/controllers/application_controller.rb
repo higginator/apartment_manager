@@ -14,15 +14,27 @@ class ApplicationController < ActionController::Base
   end
 
   def require_landlord
-    redirect_to '/' unless current_user.landlord?
+    if current_user
+      redirect_to '/' unless current_user.landlord?
+    else
+      redirect_to '/'
+    end
   end
 
   def require_tenant
-    redirect_to '/' unless current_user.tenant?
+    if current_user
+      redirect_to '/' unless current_user.tenant?
+    else
+      redirect_to '/'
+    end
   end
 
   def require_admin
-    redirect_to '/' unless current_user.admin?
+    if current_user
+      redirect_to '/' unless current_user.admin?
+    else
+      redirect_to '/'
+    end
   end
   
 end
