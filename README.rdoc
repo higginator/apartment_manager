@@ -1,13 +1,14 @@
 == README
 
-points of interest:
-localhost:3000/signup
-localhost:3000/login
-localhost:3000/apartments
-localhost:3000/apartments/1
-
 Login with:
-email: ryanhigs@gmail.com
-password: higgins
+  -tenant:
+    email: jake@gmail.com
+    password: thrun
 
-Note, the apartments page cannot be viewed unless a user is logged in. This is to demonstrate page view restrictions based on having an account. Next step is page view restrictions based on role of user.
+  -landlord:
+    email: denise@gmail.com
+    password: carlos
+
+  -admin:
+    email: yihao@gmail.com
+    password: mao
