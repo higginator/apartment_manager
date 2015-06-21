@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :require_landlord, only: [:landlord_manage_buildings, :landlord_manage_tenants]
+	before_action :require_landlord, only: [:landlord_manage_properties, :landlord_manage_tenants]
 
 	def signup_landing
 	end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def landlord_manage_buildings
+	def landlord_manage_properties
 	end
 
 	def landlord_manage_tenants
