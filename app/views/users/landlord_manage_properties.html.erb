@@ -5,6 +5,25 @@
         </div>
     </div>
 </div>
+
+<div class="apartmentss">
+  <div class="container">
+
+    <div class="row">
+      <% @user.apartments.each do |apartment| %> 
+        <div class="item col-md-4">
+          <div class="apartment-info">
+            <h2><%= apartment.address %></h2> 
+            <p><%= link_to "See Apartment", apartment_path(apartment)  %></p>
+          </div>
+        </div>
+      <% end %> 
+    </div>
+
+  </div>
+</div>
+
+
 <div class='container'>
     <div class='row'>
       <div class='col-lg-6 text-center'>

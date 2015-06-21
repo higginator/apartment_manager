@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 	end
 
 	def landlord_manage_properties
+		@user = User.find_by_id(session[:user_id])
 	end
 
 	def landlord_manage_tenants
