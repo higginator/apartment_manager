@@ -1,0 +1,16 @@
+<%= form_for(:apartment, :html => {:class => 'form-horizontal'}) do |f| %>
+
+      <div class='form-group form-group-lg'>
+        <label for='inputFirstName' class='col-lg-2 control-label'>Address</label>
+        <div class='col-lg-10'>
+          <%= f.text_field :address, :class => 'form-control', :id => 'inputAddress', :placeholder => 'Address' %>
+        </div>
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-lg-12'>
+            <%= f.submit "Create Property", class: "btn btn-success btn-submit btn-lg btn-block" %>
+          </div>
+        </div>
+      </div>
+<% end %>

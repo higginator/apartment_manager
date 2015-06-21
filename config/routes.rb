@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   get 'apartments' => 'apartments#index'
   get 'apartments/new' => 'apartments#new'
+  post 'apartments/new' => 'apartments#create'
   get 'apartments/:id' => 'apartments#show', as: :apartment
-  post 'apartments' => 'apartments#create'
-
 
   get 'signup' => 'users#signup_landing'
   get 'signup/tenant' => 'users#new_tenant'
