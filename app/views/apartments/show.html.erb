@@ -1,7 +1,15 @@
-<div class="photos">
-  <div class="container">
+<div class='container'>
+    <div class='row'>
+       <div class='text-center col-lg-12'>
+         <h1><%= @apartment.address %></h1>
+        </div>
+    </div>
+</div>
 
-    <h1><%= @apartment.address %></h1>
-
-  </div>
+<div class='container'>
+    <div class='row'>
+      <div class='col-lg-6 text-center'>
+        <%= link_to "Destroy", destroy_apartment_path(@apartment.id), method: :delete, :class => 'btn btn-danger btn-lg btn-block', :role => 'button' %>
+      </div>
+    </div>
 </div>

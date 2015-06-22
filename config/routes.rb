@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'apartments/new' => 'apartments#new'
   post 'apartments/new' => 'apartments#create'
   get 'apartments/:id' => 'apartments#show', as: :apartment
+  delete 'apartments/:id' => 'apartments#destroy', as: :destroy_apartment
 
   get 'signup' => 'users#signup_landing'
   get 'signup/tenant' => 'users#new_tenant'

@@ -25,6 +25,11 @@ class ApartmentsController < ApplicationController
 		end
 	end
 
+	def destroy
+		Apartment.destroy(params[:id])
+		redirect_to profile_manage_properties_path
+	end
+
 	private
 	  def apartment_params
 	  	params.require(:apartment).permit(:address)
