@@ -16,12 +16,11 @@ class ApartmentsController < ApplicationController
 
 	def create
 		@apartment = Apartment.new(apartment_params)
-		puts 'SO THE APARTMENT IS ABOVE'
+		@user = User.find_by_id(session[:user_id])
 		if @apartment.save
-			puts 'I SAVED THE APARTMENT AND TRYING TO REDIRECT'
-			redirect_to apartments_path
+			@user.apartments.push(@apartment)
+			redirect_to profile_manage_properties_path
 		else
-			puts 'CANT EVEN REDIRECT'
 			redirect_to apartments_new_path
 		end
 	end
