@@ -1,9 +1,42 @@
 <%= form_for(:apartment, :html => {:class => 'form-horizontal'}) do |f| %>
-
+<%# this form is a placeholder for the apartment, when things like bedrooms, bathrooms, price need to be set%>
+<% end %>
+<%= form_for(:address, :html => {:class => 'form-horizontal'}) do |f| %>
+    <div class='container'>
+     <div class='row'>
+       <div class='text-center col-lg-12'>
+         <h4>Address</h4>
+        </div>
+      </div>
+    </div>
       <div class='form-group form-group-lg'>
-        <label for='inputFirstName' class='col-lg-2 control-label'>Address</label>
+        <label for='inputLine1' class='col-lg-2 control-label'>Line 1</label>
         <div class='col-lg-10'>
-          <%= f.text_field :address, :class => 'form-control', :id => 'inputAddress', :placeholder => 'Address' %>
+          <%= f.text_field :line1, :class => 'form-control', :id => 'inputLine1', :placeholder => 'Line 1' %>
+        </div>
+      </div>
+      <div class='form-group form-group-lg'>
+        <label for='inputLine2' class='col-lg-2 control-label'>Line 2</label>
+        <div class='col-lg-10'>
+          <%= f.text_field :line2, :class => 'form-control', :id => 'inputLine2', :placeholder => 'Line 2' %>
+        </div>
+      </div>      
+      <div class='form-group form-group-lg'>
+        <label for='inputCity' class='col-lg-2 control-label'>City</label>
+        <div class='col-lg-10'>
+          <%= f.text_field :city, :class => 'form-control', :id => 'inputCity', :placeholder => 'City' %>
+        </div>
+      </div>
+      <div class='form-group form-group-lg'>
+        <label for='inputState' class='col-lg-2 control-label'>State</label>
+        <div class='col-lg-10'>
+          <%= f.text_field :state, :class => 'form-control', :id => 'inputState', :placeholder => 'State' %>
+        </div>
+      </div>
+      <div class='form-group form-group-lg'>
+        <label for='inputZip' class='col-lg-2 control-label'>ZIP code</label>
+        <div class='col-lg-10'>
+          <%= f.text_field :zip, :class => 'form-control', :id => 'inputZip', :placeholder => 'ZIP code' %>
         </div>
       </div>
       <div class='container'>

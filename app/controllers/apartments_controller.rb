@@ -12,12 +12,15 @@ class ApartmentsController < ApplicationController
 
 	def new
 		@apartment = Apartment.new
+		@address = Address.new
 	end
 
 	def create
-		@apartment = Apartment.new(apartment_params)
+		@apartment = Apartment.new
+		@address = Address.new(address_params)
 		@user = User.find_by_id(session[:user_id])
 		if @apartment.save
+			@apartment.address = @address
 			@user.apartments.push(@apartment)
 			redirect_to profile_manage_properties_path
 		else
@@ -31,7 +34,10 @@ class ApartmentsController < ApplicationController
 	end
 
 	private
-	  def apartment_params
-	  	params.require(:apartment).permit(:address)
+	#  def apartment_params
+	#  	params.require(:apartment).permit(:address)
+	#  end
+	  def address_params
+	  	params.require(:address).permit(:line1, :line2, :city, :state, :zip)
 	  end
 end
