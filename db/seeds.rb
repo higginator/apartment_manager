@@ -13,16 +13,17 @@ tenant_jake = User.create!(first_name: 'Jake', last_name: 'Thrun', email: 'jake@
 admin_yihao = User.create!(first_name: 'Yihao', last_name: 'Mao', email: 'yihao@gmail.com', password: 'mao', role: 'admin' )
 
 # Addresses
-
 berkeley_address = Address.create!(line1: '2442 Piedmont Avenue', line2: 'Apartment 13', city: 'Berkeley', state: 'CA', zip: '94704')
 disneyland_address = Address.create!(line1: '1313 Disneyland Drive', city: 'Anaheim', state: 'CA', zip: '92802')
 team3d_address = Address.create!(line1: '1337 Headshot Lane', city: 'Miami', state: 'FL', zip: '33101')
 newyork_address = Address.create!(line1: '11 East 17th Street', line2: '#5', city: 'New York', state: 'NY', zip: '10003')
 
+# Apartments
 paradise_valley_estates = Apartment.create!(address: berkeley_address)
 mickey_mansion = Apartment.create!(address: disneyland_address)
 gamer_house = Apartment.create!(address: team3d_address)
 yuppie_land = Apartment.create!(address: newyork_address)
 
+# Adding Apartments that belong to Users
 landlord_denise.apartments.push(paradise_valley_estates)
 landlord_denise.apartments.push(gamer_house)

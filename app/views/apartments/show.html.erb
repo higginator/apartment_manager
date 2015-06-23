@@ -1,7 +1,12 @@
 <div class='container'>
     <div class='row'>
        <div class='text-center col-lg-12'>
-         <h1><%= @apartment.address %></h1>
+          <% if @apartment.address.line2? %>
+            <h1><%= @apartment.address.line1 + ' ' + @apartment.address.line2 %></h1>
+          <% else %>
+            <h1><%= @apartment.address.line1 %></h1> 
+          <% end %>
+            <h1><%= @apartment.address.city + ', ' + @apartment.address.state + ' ' + @apartment.address.zip %></h1>
         </div>
     </div>
 </div>
