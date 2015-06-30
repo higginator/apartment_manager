@@ -1,17 +1,17 @@
 <div class='container'>
     <div class='row'>
-       <div class='text-center col-lg-12'>
-         <h1>Unique Landlord Only Page</h1>
+       <div class='text-center col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+         <h1>Hello <%=@user.first_name %>!</h1>
         </div>
     </div>
 </div>
   <div class='container'>
     <div class='row'>
-      <div class='col-lg-6 text-center'>
-        <%= link_to "Manage Properties", profile_manage_properties_path, :class => 'btn btn-default btn-lg btn-block', :role => 'button' %>
+      <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+        <%= link_to image_tag('landlord_manage_properties.png', :alt => 'Responsive Image', :class => 'img-responsive'), profile_manage_properties_path %>
       </div>
-       <div class='col-lg-6 text-center'>
-        <%= link_to "Manage Tenants", profile_manage_tenants_path, :class => 'btn btn-default btn-lg btn-block', :role => 'button' %>
+      <div class='col-lg-6 col-md-6 col-sm-6 col-xs-6'>
+        <%= link_to image_tag('landlord_manage_tenants.png', :alt => 'Responsive Image', :class => 'img-responsive'), profile_manage_tenants_path %>
       </div>
      </div>
    </div>
