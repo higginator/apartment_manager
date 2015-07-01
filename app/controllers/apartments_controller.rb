@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-	before_action :require_user, only: [:index, :show]
+	#before_action :require_user, only: [:index, :show]
 	before_action :require_landlord, only: [:new]
 
 	def index
