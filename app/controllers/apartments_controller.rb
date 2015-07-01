@@ -15,6 +15,22 @@ class ApartmentsController < ApplicationController
 		@apartment = Apartment.new
 		@address = Address.new
 	end
+	
+	def edit
+    @apartment = Apartment.find(params[:id])
+    @address = @apartment.address
+  end
+  
+  def update
+    @apartment = Apartment.find(params[:id])
+    @address = @apartment.address
+    if @address.update_attributes(address_params)
+      redirect_to profile_manage_properties_path
+    else
+      render 'edit'
+    end
+  end
+
 
 	def create
 		@apartment = Apartment.new
