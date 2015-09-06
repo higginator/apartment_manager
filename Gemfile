@@ -35,6 +35,9 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
+ 
+# User paperclip for image upload
+gem 'paperclip', '~>4.3'
 
 # Use postgres as database
 # gem 'pg'
