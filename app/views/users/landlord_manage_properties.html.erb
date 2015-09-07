@@ -29,7 +29,7 @@
         	<% if apartment.address != nil and apartment.image1? %>
         		<%= image_tag apartment.image1(:small) %>
         	<% end %>	
-            <p><%= link_to "See Apartment", apartment_path(apartment)  %></p>
+            <p><%= link_to "See Apartment", apartment_path(apartment), :target => "blank"  %></p>
         </div>
       <% end %> 
     </div>

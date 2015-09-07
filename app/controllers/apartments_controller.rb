@@ -30,6 +30,10 @@ class ApartmentsController < ApplicationController
       render 'edit_address'
     end
   end
+
+  def application
+  	@apartment = Apartment.find(params[:id])
+  end
   
   def edit
     @apartment = Apartment.find(params[:id])
@@ -79,4 +83,17 @@ class ApartmentsController < ApplicationController
   def apartment_params
     params.require(:apartment).permit(:address, :image1, :image2, :image3, :full_bathroom, :half_bathroom, :rooms)
   end  
+
+  def link_to_blank(name = nil, options = nil, html_options = nil, &block)
+  target_blank = {target: "_blank"}
+  if block_given?
+    options ||= {}
+    options = options.merge(target_blank)
+  else
+    html_options ||= {}
+    html_options = html_options.merge(target_blank)
+  end
+  link_to(name, options, html_options, &block)
+end
+
 end

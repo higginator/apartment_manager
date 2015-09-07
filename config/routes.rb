@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'apartments/:id/update' => 'apartments#update', as: :update_apartment
   get 'apartments/:id' => 'apartments#show', as: :apartment
   delete 'apartments/:id' => 'apartments#destroy', as: :destroy_apartment
+  get 'apartments/:id/application' => 'apartments#application', as: :application_apartment
 
   get 'signup' => 'users#signup_landing'
   get 'signup/tenant' => 'users#new_tenant'

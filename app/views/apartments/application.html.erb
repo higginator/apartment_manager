@@ -1,0 +1,34 @@
+<%= form_for(:apartment, :html => {:class => 'form-horizontal'}) do |f| %>
+<div class='container'>
+    <div class='row'>
+       <div class='text-center col-lg-12'>
+          <% if @apartment.address.line2? %>
+            <h1><%= @apartment.address.line1 + ', ' + @apartment.address.line2 %></h1>
+          <% else %>
+            <h1><%= @apartment.address.line1 %></h1> 
+          <% end %>
+          <% if @apartment.address.city? and @apartment.address.state? %>
+            <h1><%= @apartment.address.city + ', ' + @apartment.address.state + ' ' + @apartment.address.zip %></h1>
+          <% else %>
+          	<h1><%= @apartment.address.city + @apartment.address.state + ' ' + @apartment.address.zip %></h1> 
+          <% end %>
+      </div>
+  </div>
+
+	  <div class='form-group form-group-lg'>
+	    <label for='inputImage1' class='col-lg-2 control-label'>Application</label>
+	    <div class='col-lg-10'>        	
+	      <%= f.file_field :image1, :id => 'inputImage1', :class => 'form-control' %>
+      	  <% if @apartment.address != nil and @apartment.image1? %>
+      		<p style="border-style:solid; border-color:LightGray; border-width:thin;">  
+      			<%= image_tag @apartment.image1(:thumb) %>
+      			<%= label_tag(:image_delete1, "Delete application?") %>  
+      			<%= check_box_tag(:image_delete1) %>
+      		</p> 
+    	  <% end %>
+	    </div>
+	  </div>
+
+</div>
+</div>
+<% end %>
