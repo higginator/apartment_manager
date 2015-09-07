@@ -16,18 +16,31 @@ class ApartmentsController < ApplicationController
 		@address = Address.new
 	end
 	
-	def edit
+	def edit_address
     @apartment = Apartment.find(params[:id])
     @address = @apartment.address
   end
   
-  def update
+  def update_address
     @apartment = Apartment.find(params[:id])
     @address = @apartment.address
     if @address.update_attributes(address_params)
+      redirect_to edit_apartment_path(@apartment)
+    else
+      render 'edit_address'
+    end
+  end
+  
+  def edit
+    @apartment = Apartment.find(params[:id])
+  end
+  
+  def update
+    @apartment = Apartment.find(params[:id])
+    if @apartment.update_attributes(apartment_params)
       redirect_to profile_manage_properties_path
     else
-      render 'edit'
+      redirect_to edit_apartment_path(@apartment)
     end
   end
 
@@ -39,7 +52,7 @@ class ApartmentsController < ApplicationController
 		if @apartment.save
 			@apartment.address = @address
 			@user.apartments.push(@apartment)
-			redirect_to profile_manage_properties_path
+			redirect_to edit_apartment_path(@apartment)
 		else
 			redirect_to apartments_new_path
 		end
@@ -54,7 +67,16 @@ class ApartmentsController < ApplicationController
 	#  def apartment_params
 	#  	params.require(:apartment).permit(:address)
 	#  end
-	  def address_params
-	  	params.require(:address).permit(:line1, :line2, :city, :state, :zip)
-	  end
+  def address_params
+    params.require(:address).require(:line1)
+    params.require(:address).require(:city)
+    params.require(:address).require(:state)
+    params.require(:address).require(:zip)
+    params.require(:address).permit(:line1, :line2, :city, :state, :zip)
+  end
+    
+  private
+  def apartment_params
+    params.require(:apartment).permit(:address, :image1, :image2, :image3, :full_bathroom, :half_bathroom, :rooms)
+  end  
 end

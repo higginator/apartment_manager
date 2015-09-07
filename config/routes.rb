@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'apartments' => 'apartments#index'
   get 'apartments/new' => 'apartments#new'
   post 'apartments/new' => 'apartments#create'
-  get 'apartments/:id/edit' => 'apartments#edit', as: :edit_apartment
-  post 'apartments/:id/edit' => 'apartments#update', as: :update_apartment
+  get 'apartments/:id/edit' => 'apartments#edit_address', as: :edit_address
+  post 'apartments/:id/edit' => 'apartments#update_address', as: :update_address
+  get 'apartments/:id/update' => 'apartments#edit', as: :edit_apartment
+  post 'apartments/:id/update' => 'apartments#update', as: :update_apartment
   get 'apartments/:id' => 'apartments#show', as: :apartment
   delete 'apartments/:id' => 'apartments#destroy', as: :destroy_apartment
 

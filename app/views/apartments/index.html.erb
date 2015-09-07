@@ -1,20 +1,19 @@
-<div class="apartmentss">
+<div class="apartments">
   <div class="container">
-
-    <div class="row">
+    <div class="cards row">
       <% @apartments.each do |apartment| %> 
-        <div class="item col-md-4">
-          <div class="apartment-info">
+        <div class="card medium col-md-4">
             <% if apartment.address.line2? %>
               <h2><%= apartment.address.line1 + ' ' + apartment.address.line2 %></h2>
             <% else %>
               <h2><%= apartment.address.line1 %></h2> 
             <% end %>
+        	<% if apartment.address != nil and apartment.address.image1? %>
+        		<%= image_tag apartment.address.image1(:small) %>
+        	<% end %>	
             <p><%= link_to "See Apartment", apartment_path(apartment)  %></p>
-          </div>
         </div>
       <% end %> 
     </div>
-
   </div>
 </div>

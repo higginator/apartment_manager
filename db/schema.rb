@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623165124) do
+ActiveRecord::Schema.define(version: 20150826074116) do
 
   create_table "addresses", force: true do |t|
     t.datetime "created_at"
@@ -28,16 +28,31 @@ ActiveRecord::Schema.define(version: 20150623165124) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "image1_file_name"
+    t.string   "image1_content_type"
+    t.integer  "image1_file_size"
+    t.datetime "image1_updated_at"
+    t.string   "image2_file_name"
+    t.string   "image2_content_type"
+    t.integer  "image2_file_size"
+    t.datetime "image2_updated_at"
+    t.string   "image3_file_name"
+    t.string   "image3_content_type"
+    t.integer  "image3_file_size"
+    t.datetime "image3_updated_at"
+    t.integer  "half_bathroom"
+    t.integer  "full_bathroom"
+    t.integer  "rooms"
   end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "role"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
   end
 
 end

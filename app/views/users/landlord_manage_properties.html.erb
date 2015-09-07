@@ -6,28 +6,6 @@
     </div>
 </div>
 
-<div class="apartmentss">
-  <div class="container">
-
-    <div class="row">
-      <% @user.apartments.each do |apartment| %> 
-        <div class="item col-md-4">
-          <div class="apartment-info">
-            <% if apartment.address.line2? %>
-              <h2><%= apartment.address.line1 + ' ' + apartment.address.line2 %></h2>
-            <% else %>
-              <h2><%= apartment.address.line1 %></h2> 
-            <% end %> 
-            <p><%= link_to "See Apartment", apartment_path(apartment)  %></p>
-          </div>
-        </div>
-      <% end %> 
-    </div>
-
-  </div>
-</div>
-
-
 <div class='container'>
     <div class='row'>
       <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3'></div>
@@ -37,3 +15,23 @@
       <div class='col-lg-3 col-md-3 col-sm-3 col-xs-3'></div>
     </div>
  </div>
+
+<div class="apartmentss">
+  <div class="container">
+    <div class="cards row">
+      <% @user.apartments.each do |apartment| %> 
+        <div class="card medium col-md-4">
+            <% if apartment.address.line2? %>
+              <h2><%= apartment.address.line1 + ' ' + apartment.address.line2 %></h2>
+            <% else %>
+              <h2><%= apartment.address.line1 %></h2> 
+            <% end %> 
+        	<% if apartment.address != nil and apartment.image1? %>
+        		<%= image_tag apartment.image1(:small) %>
+        	<% end %>	
+            <p><%= link_to "See Apartment", apartment_path(apartment)  %></p>
+        </div>
+      <% end %> 
+    </div>
+  </div>
+</div>
