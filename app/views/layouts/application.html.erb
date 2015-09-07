@@ -12,6 +12,20 @@
     <div class="navbar-header" id='hig'>
       <%= link_to 'Home', root_path, :class => 'navbar-brand' %>
     </div>
+
+    <ul class='nav navbar-nav navbar-left'> 
+          <li class='dropdown'><%= link_to nil, :class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}, :role => 'button', :aria => {:haspopup => 'true', :expanded => 'false'} do %>
+              Browse
+              <span class='caret'></span>
+            <% end %>
+
+            <ul class='dropdown-menu'>
+              <li><%= link_to "Popular", apartments_path %></li>
+              <li><%= link_to "Nearby", :id => "nearby_houses" %></li>
+            </ul>
+          </li> 
+    </ul>
+
       <ul class='nav navbar-nav navbar-right'> 
       <% if current_user %> 
           <li class='dropdown'><%= link_to nil, :class => 'dropdown-toggle', :data => {:toggle => 'dropdown'}, :role => 'button', :aria => {:haspopup => 'true', :expanded => 'false'} do %>
