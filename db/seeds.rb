@@ -19,6 +19,9 @@ team3d_address = Address.create!(line1: '1337 Headshot Lane', city: 'Miami', sta
 newyork_address = Address.create!(line1: '11 East 17th Street', line2: '#5', city: 'New York', state: 'NY', zip: '10003')
 
 # Apartments
+#image1 = File.new("#{Rails.root}/app/assets/images/berk_img1.jpg")
+#image2 = File.new("#{Rails.root}/assets/images/berk_img2.jpg")
+#image3 = File.new("#{Rails.root}/assets/images/berk_img3.jpg")
 paradise_valley_estates = Apartment.create!(address: berkeley_address)
 mickey_mansion = Apartment.create!(address: disneyland_address)
 gamer_house = Apartment.create!(address: team3d_address)
